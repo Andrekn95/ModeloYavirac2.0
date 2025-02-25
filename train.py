@@ -6,27 +6,21 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
 from peft import LoraConfig, PeftModel
 from trl import SFTTrainer
 
-# 🔹 1. Función para cargar y dividir el texto en fragmentos manejables
+# 🔹 1. Función para cargar y dividir el texto en fragmentos
 def cargar_y_dividir_documento(doc_path, tokenizer, max_length=512):
     doc = Document(doc_path)
     texto_completo = " ".join([p.text for p in doc.paragraphs if p.text.strip()])
     
-    # Tokenizar todo el texto
     tokens = tokenizer(texto_completo, truncation=False, return_tensors="pt")["input_ids"][0]
-    
-    # Dividir el texto en fragmentos de `max_length` tokens
     fragmentos = [tokens[i:i + max_length] for i in range(0, len(tokens), max_length)]
-    
-    # Convertir a strings nuevamente
     fragmentos_texto = [tokenizer.decode(frag, skip_special_tokens=True) for frag in fragmentos]
     
     return fragmentos_texto
 
 # 🔹 2. Configurar el modelo y el tokenizador
-modelo_base = "gpt2-medium"
+modelo_base = "meta-llama/Llama-2-7b-hf"  # Llama 2 de Hugging Face
 tokenizer = AutoTokenizer.from_pretrained(modelo_base)
 
-# Asegurar que el tokenizador tenga un token de padding
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token
 
@@ -34,21 +28,13 @@ if tokenizer.pad_token is None:
 doc_path = "modelo/documento.docx"
 fragmentos_texto = cargar_y_dividir_documento(doc_path, tokenizer)
 
-# Crear dataset con los fragmentos como entradas y el mismo texto como salida
 dataset = Dataset.from_dict({
-    "prompt": fragmentos_texto,
-    "response": fragmentos_texto
+    "text": fragmentos_texto
 })
 
-# 🔹 4. Tokenizar datos
+# 🔹 4. Tokenización
 def tokenize_function(examples):
-    return tokenizer(
-        examples["prompt"], 
-        text_pair=examples["response"], 
-        truncation=True, 
-        padding="max_length", 
-        max_length=512
-    )
+    return tokenizer(examples["text"], truncation=True, padding="max_length", max_length=512)
 
 dataset = dataset.map(tokenize_function, batched=True)
 
@@ -63,8 +49,8 @@ model = PeftModel(model, peft_config)
 
 # 🔹 6. Configurar entrenamiento
 training_args = TrainingArguments(
-    output_dir="modelo/salida",
-    per_device_train_batch_size=1,  # 🔹 Ajustado para CPU
+    output_dir="modelo/afinados",
+    per_device_train_batch_size=1, 
     gradient_accumulation_steps=2,
     num_train_epochs=3,
     logging_dir="logs",
@@ -72,16 +58,17 @@ training_args = TrainingArguments(
     save_strategy="epoch"
 )
 
-# 🔹 7. Inicializar entrenador y entrenar
+# 🔹 7. Entrenar modelo con LoRA
 trainer = SFTTrainer(
     model=model,
     train_dataset=dataset,
     args=training_args
 )
 
+print("🚀 Iniciando entrenamiento con LoRA...")
 trainer.train()
 
-# 🔹 8. Guardar modelo ajustado
+# 🔹 8. Guardar el modelo ajustado
 output_dir = "modelo/afinados"
 trainer.save_model(output_dir)
 tokenizer.save_pretrained(output_dir)
