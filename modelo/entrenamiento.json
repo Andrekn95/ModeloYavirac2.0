@@ -1,0 +1,134 @@
+[
+    {
+        "input": "¿Qué idea sugirió Melanie durante la conversación inicial?",
+        "output": "Melanie sugirió crear un club para enseñar y aprender nuevas habilidades."
+    },
+    {
+        "input": "¿Qué contribución tecnológica hizo Joel?",
+        "output": "Joel desarrolló una aplicación para conectar vecinos y organizar actividades."
+    },
+    {
+        "input": "¿Cuál fue la primera acción concreta del grupo?",
+        "output": "Realizaron una jornada de limpieza en el parque del barrio."
+    },
+    {
+        "input": "¿Qué logros obtuvieron en la limpieza del parque?",
+        "output": "Renovaron el parque recogiendo residuos, podando arbustos y pintando bancos."
+  },
+  {
+      "input": "¿Qué organizaron tras la limpieza del parque?",
+      "output": "Convocaron una reunión comunitaria para presentar sus iniciativas."
+  },
+  {
+      "input": "¿Qué comités se crearon en la reunión?",
+      "output": "Se formaron comités de reciclaje, educación, embellecimiento y apoyo social."
+  },
+  {
+      "input": "¿Qué función tenía la aplicación comunitaria?",
+      "output": "Permitía coordinar eventos, compartir recursos y proponer iniciativas."
+  },
+  {
+      "input": "¿Cómo difundieron la aplicación?",
+      "output": "La promocionaron en redes sociales para aumentar su alcance."
+  },
+  {
+      "input": "¿Qué apoyo recibieron de comercios locales?",
+      "output": "Recibieron donaciones de materiales, herramientas y alimentos."
+  },
+  {
+      "input": "¿Qué talleres organizaron para jóvenes?",
+      "output": "Implementaron talleres de reciclaje, arte urbano y tecnología."
+  },
+  {
+      "input": "¿Qué desafío surgió tras una tormenta?",
+      "output": "Debieron reparar daños en los murales y áreas restauradas."
+  },
+  {
+      "input": "¿Qué cambios visibles hubo en un año?",
+      "output": "Calles con murales coloridos, parques limpios y participación activa."
+  },
+  {
+      "input": "¿Cómo expandieron su impacto?",
+      "output": "Compartiendo su modelo con otras comunidades y barrios."
+  },
+  {
+      "input": "¿Qué programa cultural implementaron?",
+      "output": "Crearon un programa de comedia con monólogos sobre experiencias comunitarias."
+  },
+  {
+      "input": "¿Qué mejoras deportivas realizaron?",
+      "output": "Organizaron torneos y mejoraron instalaciones deportivas."
+  },
+  {
+      "input": "¿Qué apoyo educativo ofrecieron?",
+      "output": "Implementaron un programa de tutorías académicas y vocacionales."
+  },
+  {
+      "input": "¿Qué reconocimiento mediático obtuvieron?",
+      "output": "Un artículo periodístico atrajo apoyo de empresas y organizaciones."
+  },
+  {
+      "input": "¿Qué proyecto educativo desarrollaron?",
+      "output": "Crearon una plataforma de aprendizaje con inteligencia artificial."
+  },
+  {
+      "input": "¿Qué ofrece la plataforma educativa?",
+      "output": "Cursos interactivos, tutorías personalizadas y herramientas tecnológicas."
+  },
+  {
+      "input": "¿Qué lograron los usuarios de la plataforma?",
+      "output": "Retomaron estudios, descubrieron oportunidades laborales y se profesionalizaron."
+  },
+  {
+      "input": "¿Qué innovación propuso Martín?",
+      "output": "Implementó análisis predictivo para necesidades educativas personalizadas."
+  },
+  {
+      "input": "¿Qué evento organizaron contra el escepticismo?",
+      "output": "Un encuentro público donde estudiantes compartieron sus éxitos."
+  },
+  {
+      "input": "¿Qué mejoras tecnológicas agregaron?",
+      "output": "Realidad virtual y gamificación para aprendizaje inmersivo."
+  },
+  {
+      "input": "¿Qué simboliza el árbol del aniversario?",
+      "output": "Representa el crecimiento del proyecto: raíces históricas y ramas futuras."
+  },
+  {
+      "input": "¿Qué contiene la cápsula del tiempo?",
+      "output": "Fotos, cartas vecinales, notas originales y la primera versión digital."
+  },
+  {
+      "input": "¿Qué mensaje tiene la placa conmemorativa?",
+      "output": "'Aquí empezó todo. Pequeñas acciones cambian el mundo.'"
+  },
+  {
+      "input": "¿Qué demostró el legado del grupo?",
+      "output": "Que la unidad y creatividad generan transformaciones duraderas."
+  },
+  {
+      "input": "¿Qué rol tuvo Jordy en el aniversario?",
+      "output": "Dirigió una banda musical infantil con temas inspiradores."
+  },
+  {
+      "input": "¿Qué mostraron en el video conmemorativo?",
+      "output": "Un resumen histórico de logros y evolución del proyecto."
+  },
+  {
+      "input": "¿Qué novedad tecnológica presentaron?",
+      "output": "Integración de realidad virtual en la plataforma educativa."
+  },
+  {
+      "input": "¿Qué solución de accesibilidad implementaron?",
+      "output": "Diseños inclusivos para usuarios con diferentes capacidades."
+  },
+  {
+      "input": "¿Qué impacto tuvo en oportunidades laborales?",
+      "output": "Jóvenes accedieron a empleos tecnológicos y pasantías especializadas."
+  },
+  {
+      "input": "¿Cómo integraron educación tradicional y tecnología?",
+      "output": "Complementaron clases presenciales con herramientas digitales adaptativas."
+  }
+]
